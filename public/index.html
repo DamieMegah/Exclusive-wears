@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Wears - Sophistication Meets Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <span class="logo-e">E</span><span class="logo-text">xclusive Wears</span>
+        </a>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for luxury items...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+            <div id="searchResults" class="search-results-dropdown">
+                </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop&nbsp;All</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" id="loginBtn"><i class="fas fa-user"></i>&nbsp;Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="cart-icon-container">
+            <button id="cartIcon" class="cart-button">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cartCount" class="cart-count">0</span>
+            </button>
+        </div>
+         <i class="fas fa-bars"></i>
+    </header>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Exclusive Wears Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="cta-button">Sign In</button>
+                <p class="login-note">Default Admin: **ADMIN** / **Admin123**</p>
+            </form>
+        </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your Shopping Bag</h2>
+            <div id="cartItemsContainer">
+                </div>
+            <div class="cart-summary">
+                <p>Subtotal: <span id="cartSubtotal">$0.00</span></p>
+                <button id="proceedToOrderBtn" class="cta-button primary-btn">Proceed to Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="productDetailModal" class="modal">
+        <div class="modal-content product-modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="productDetailContent"></div>
+        </div>
+    </div>
+
+    <main>
+        <div id="cart2"  class="mid-cart">
+            <i id="cart-shirt" class="fas fa-shirt"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+        
+
+
+        <section id="breadcrumbs" class="breadcrumbs-nav hidden">
+            </section>
+
+        <section id="home" class="hero-section">
+             <div class="hero-bg bg-a" aria-hidden="true"></div>
+             <div class="hero-bg bg-b" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1>Unveil Your Sophistication.</h1>
+                <p>Experience the curated elegance of Exclusive Wears. Where timeless design meets unparalleled quality.</p>
+                <a href="#shop" class="cta-button">Explore&nbsp;The&nbsp;Collection</a>
+            </div>
+        </section>
+
+        <section class="advertisement-section">
+            <div class="ad-content">
+                <h2><i class="fas fa-laptop"></i> Need a Stunning Website?</h2>
+                <p> <span style='color:rgba(254, 254, 254, 0.905);'>DamieMegah</span> is your partner for exclusive website and software development. Elevate your brand with cutting-edge digital solutions.</p>
+                <a href="https://damiemegah.github.io/portfolio/#" class="ad-link" target="_blank">Discover DamieMegah Today &rarr;</a>
+            </div>
+        </section>
+
+        <section id="shop" class="product-sections-container">
+            <h2 class="section-title">The Curated Selection</h2>
+            <p class="section-subtitle">Each piece, a statement. Discover collections designed for the discerning.</p>
+
+            <div class="product-category" id="promo-items">
+                <details open>
+                    <summary class="category-header wow-animation"><i class="fas fa-clock"></i> Limited Time Offers: Elevate Your Wardrobe</summary>
+                    <div class="product-grid" id="promo-grid">
+                        </div>
+                </details>
+            </div>
+
+            <div class="product-category" id="apparel-items">
+                <details>
+                    <summary class="category-header wow-animation"><i class="fas fa-shirt"></i> The Apparel Collection: Timeless Silhouettes</summary>
+                    <div class="product-grid" id="apparel-grid">
+                        </div>
+                </details>
+            </div>
+
+            <div class="product-category" id="accessory-items">
+                <details>
+                    <summary class="category-header wow-animation"><i class="fas fa-ring"></i> Accessories: The Perfect Finish</summary>
+                    <div class="product-grid" id="accessory-grid">
+                        </div>
+                </details>
+            </div>
+
+        </section>
+        
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Complete Your Exclusive Order</h2>
+                <div id="paymentSelection">
+                    <p>Select Payment Method:</p>
+                    <div class="payment-options">
+                        <button class="payment-btn" data-method="card"><i class="fas fa-credit-card"></i> Card</button>
+                        <button class="payment-btn" data-method="paypal"><i class="fab fa-paypal"></i> PayPal</button>
+                        <button class="payment-btn" data-method="transfer"><i class="fas fa-money-bill-transfer"></i> Bank Transfer</button>
+                    </div>
+                    <button id="placeOrderBtn" class="cta-button" disabled>Place Order</button>
+                </div>
+                <div id="orderConfirmation" class="hidden confirmation-message">
+                    <p><i class="fas fa-check-circle check-icon"></i></p>
+                    <h3>Order Successfully Placed!</h3>
+                    <p>Your Exclusive Wears order has been confirmed.</p>
+                    <p>It will **ship in approximately 3 days**.</p>
+                    <p>Thank you for choosing sophistication.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-about">
+                <h3 class="logo-e">E <span class="logo-text">&nbsp;xclusive Wears</span></h3>
+                <p>Curating a world of timeless style and unparalleled quality. Your destination for discerning fashion.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Career Opportunities</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-newsletter">
+                <h4>Stay Exclusive</h4>
+                <p>Subscribe for early access to new collections and promotions.</p>
+                <form>
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Exclusive Wears. All rights reserved. | Designed by DamieMegah</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
