@@ -548,9 +548,9 @@ document.addEventListener('DOMContentLoaded', () => {
 /* JavaScript */
 (function () {
   const images = [
-    '/public/bg1.png',
-    '/public/bg2.png',
-    '/public/bg3.png'
+    'bg1.png',
+    'bg2.png',
+    'bg3.png'
   ];
 
   const intervalMs = 3000;     // time each image shows

@@ -949,10 +949,37 @@ details[open] summary::after {
     display: none !important;
 }
 
+
+
+
+
+@media (max-width: 1900px) {
+  
+    html{
+        font-size:90%;
+    }
+}
+
+/*================mini desktop=================*/
+
+@media (max-width: 1028px) {
+
+    html{
+        font-size:60%;
+    }
+
+}
+
 /*
  * --- Mobile Responsiveness (Highly Responsive) ---
  */
 @media (max-width: 992px) {
+
+    html{
+        font-size:90%;
+    }
+
+
     .main-header {
         flex-wrap: wrap;
     }
